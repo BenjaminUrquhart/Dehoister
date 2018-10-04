@@ -28,10 +28,10 @@ public class Dehoister extends ListenerAdapter{
 	}
 	public String getDehoist(String name){
 		String out = name;
-		System.out.println(name);
-		if(!chars.contains(name.substring(0, 1).toLowerCase())){
+		String first = name.substring(0, 1);
+		if(!chars.contains(first.toLowerCase()) && !first.equals("\u17B5")){
 			out = "\u17B5clearly a hoister";
-		}System.out.println(out);
+		}
 		return out;
 	}
 	public void dehoist(Member member){
