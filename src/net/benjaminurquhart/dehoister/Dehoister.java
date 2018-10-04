@@ -49,7 +49,7 @@ public class Dehoister extends ListenerAdapter{
 		}
 		String dehoistStr = getDehoist(member.getEffectiveName());
 		if(!dehoistStr.equals(member.getEffectiveName())){
-			self.getGuild().getController().setNickname(member, dehoistStr).queue();
+			self.getGuild().getController().setNickname(member, dehoistStr).reason("Auto-dehoist").queue();
 		}
 	}
 	public static void main(String[] args) throws Exception{
