@@ -16,6 +16,7 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 public class Dehoister extends ListenerAdapter{
 
+	private static final String chars = "abcdefghijklmnopqrstuvwxyz";
 	private static String token = "";
 	private static ShardManager shardManager;
 	//private static String PREFIX = "";
@@ -25,21 +26,12 @@ public class Dehoister extends ListenerAdapter{
 		token = sc.nextLine();
 		sc.close();
 	}
-	public String stringToHex(String string) {
-		
-		  StringBuilder buf = new StringBuilder(200);
-		  for (char ch: string.toCharArray()) {
-			  if (buf.length() > 0)
-				  buf.append(' ');
-			  buf.append(String.format("%04x", (int) ch));
-		  }
-		  return buf.toString();
-	}
 	public String getDehoist(String name){
 		String out = name;
-		if(Integer.decode(stringToHex(name.substring(0, 1))) < 64){
+		System.out.println(name);
+		if(!chars.contains(name.substring(0, 1).toLowerCase())){
 			out = "\u17B5clearly a hoister";
-		}
+		}System.out.println(out);
 		return out;
 	}
 	public void dehoist(Member member){
