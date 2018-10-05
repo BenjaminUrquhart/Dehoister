@@ -22,7 +22,7 @@ public class Dehoister extends ListenerAdapter{
 	//private static String PREFIX = "";
 	
 	public Dehoister() throws Exception{
-		Scanner sc = new Scanner(new File("token.txt"));
+		Scanner sc = new Scanner(new File("token-dehoist.txt"));
 		token = sc.nextLine();
 		sc.close();
 	}
